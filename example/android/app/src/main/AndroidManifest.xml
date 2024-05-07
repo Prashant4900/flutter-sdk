@@ -64,6 +64,6 @@
             android:value="2" />
         <meta-data
             android:name="com.truecaller.android.sdk.ClientId"
-            android:value="1si1lk7rbbo_mtg29mw5yczekv2ripbbnwnaozhpz6o" />
+            android:value="2hewgecc96pb7cqypkymhvttbdismlyvbqa-idr4wrk" />
     </application>
 </manifest>

@@ -28,6 +28,8 @@
  * PRODUCT YOU ARE ASSUMING THE ENTIRE RISK AS TO ITS QUALITY AND PERFORMANCE.
  */
 
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
@@ -162,13 +164,14 @@ class _MyAppState extends State<OAuthResultScreen> {
           await dio.post('https://oauth-account-noneu.truecaller.com/v1/token',
               data: {
                 'grant_type': 'authorization_code',
-                'client_id': '1si1lk7rbbo_mtg29mw5yczekv2ripbbnwnaozhpz6o',
+                'client_id': '2hewgecc96pb7cqypkymhvttbdismlyvbqa-idr4wrk',
                 'code': '${accessTokenHelper.tcOAuthData.authorizationCode}',
                 'code_verifier': '${accessTokenHelper.codeVerifier}'
               },
               options: Options(contentType: Headers.formUrlEncodedContentType));
       if (response.statusCode == 200 && response.data != null) {
         Map result = response.data;
+        log("message: $result");
         accessToken = result['access_token'];
         setState(() {
           for (final e in result.entries) {
